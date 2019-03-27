@@ -292,15 +292,15 @@ int main(int argc, char* argv[])
         // if (r == LIBUSB_SUCCESS) {
             r = libusb_claim_interface(handle, iface);
             if (r == LIBUSB_SUCCESS) {
-                    if(argc == 1) {
-                        adjust_brighness(handle);
-                    } else if(argc == 2)
-                    {
-                        int percent = std::stoi(argv[1]);
-                        if (percent > 100) percent = 100;
-                        int brightness = int((float(percent) / 100.0) * 54000);
-                        set_brightness(handle, brightness);
-                    }
+                if(argc == 1) {
+                    adjust_brighness(handle);
+                } else if(argc == 2)
+                {
+                    int percent = std::stoi(argv[1]);
+                    if (percent > 100) percent = 100;
+                    int brightness = int((float(percent) / 100.0) * 54000);
+                    set_brightness(handle, brightness);
+                }
                 libusb_release_interface(handle, iface);
                 libusb_attach_kernel_driver(handle, iface);
             } else {
@@ -322,8 +322,6 @@ int main(int argc, char* argv[])
     libusb_free_device_list(devs, 1);
 
     libusb_exit(NULL);
-
-    getch();
     
     endwin();
     
