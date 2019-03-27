@@ -1,5 +1,7 @@
 # LG Ultrafine 4K/5K Brightness Control
 
+Control brightness of [LG Ultrafine](https://www.apple.com/nl/shop/product/HKN62ZM/A/lg-ultrafine-5k%E2%80%91display) 4K or 5K monitors on Linux.
+
 ## Requirements
 
 - `g++`
